@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Stratadox\ImmutableCollection\Test;
 
 use PHPUnit\Framework\TestCase;
-use Stratadox\ImmutableCollection\Test\Unit\Collection\SimpleCollection;
-use Stratadox\ImmutableCollection\Test\Unit\Collection\Numbers;
+use Stratadox\ImmutableCollection\Test\Unit\Collection\Stubs\SimpleCollection;
+use Stratadox\ImmutableCollection\Test\Unit\Collection\Stubs\Numbers;
 use TypeError;
 
 class I_want_to_create_collections extends TestCase

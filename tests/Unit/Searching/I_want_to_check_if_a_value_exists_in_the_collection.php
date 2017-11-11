@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Stratadox\ImmutableCollection\Test;
 
 use PHPUnit\Framework\TestCase;
-use Stratadox\ImmutableCollection\Test\Unit\Searching\Numbers\SearchableNumbers;
-use Stratadox\ImmutableCollection\Test\Unit\Searching\Things\SearchableThings;
+use Stratadox\ImmutableCollection\Test\Unit\Searching\Numbers\Numbers;
+use Stratadox\ImmutableCollection\Test\Unit\Searching\Things\Things;
 use Stratadox\ImmutableCollection\Test\Unit\Searching\Things\Thing;
 
 class I_want_to_check_if_a_value_exists_in_the_collection extends TestCase
@@ -14,7 +14,7 @@ class I_want_to_check_if_a_value_exists_in_the_collection extends TestCase
     /** @scenario */
     function checking_if_a_value_exists()
     {
-        $collection = new SearchableNumbers(1, 2, 25);
+        $collection = new Numbers(1, 2, 25);
 
         $this->assertTrue($collection->has(2));
         $this->assertFalse($collection->has(3));
@@ -23,7 +23,7 @@ class I_want_to_check_if_a_value_exists_in_the_collection extends TestCase
     /** @scenario */
     function value_checking_uses_strict_typing()
     {
-        $collection = new SearchableNumbers(1, 2, 25);
+        $collection = new Numbers(1, 2, 25);
 
         $this->assertFalse($collection->has('2'));
     }
@@ -32,7 +32,7 @@ class I_want_to_check_if_a_value_exists_in_the_collection extends TestCase
     function checking_for_objects_goes_by_value_by_default()
     {
         $foo = Thing::named('Foo');
-        $collection = new SearchableThings($foo);
+        $collection = new Things($foo);
 
         $this->assertTrue($collection->has($foo));
         $this->assertTrue($collection->has(Thing::named('Foo')));
@@ -43,7 +43,7 @@ class I_want_to_check_if_a_value_exists_in_the_collection extends TestCase
     function checking_for_objects_goes_by_reference_if_desired()
     {
         $foo = Thing::named('Foo');
-        $collection = new SearchableThings($foo);
+        $collection = new Things($foo);
 
         $this->assertTrue($collection->hasThe($foo));
         $this->assertFalse($collection->hasThe(Thing::named('Foo')));

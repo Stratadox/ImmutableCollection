@@ -6,11 +6,11 @@ namespace Stratadox\ImmutableCollection\Test;
 
 use PHPUnit\Framework\TestCase;
 use StdClass;
-use Stratadox\ImmutableCollection\Test\Unit\Merging\Double\ExtClass;
-use Stratadox\ImmutableCollection\Test\Unit\Merging\Double\ExtCollection;
-use Stratadox\ImmutableCollection\Test\Unit\Merging\Double\StdCollection;
+use Stratadox\ImmutableCollection\Test\Unit\Merging\Stubs\ExtClass;
+use Stratadox\ImmutableCollection\Test\Unit\Merging\Stubs\ExtCollection;
+use Stratadox\ImmutableCollection\Test\Unit\Merging\Stubs\StdCollection;
 use Stratadox\ImmutableCollection\Test\Unit\Merging\Numbers\MergeableNumbers;
-use Stratadox\ImmutableCollection\Test\Unit\Merging\Numbers\NumbersWithABooleanFlag;
+use Stratadox\ImmutableCollection\Test\Unit\Merging\Numbers\FlaggedNumbers;
 use TypeError;
 
 class I_want_to_merge_collections extends TestCase
@@ -59,8 +59,8 @@ class I_want_to_merge_collections extends TestCase
     /** @scenario */
     function merging_collections_preserves_the_boolean_flag_of_the_merging_collection()
     {
-        $numbers = new NumbersWithABooleanFlag(true, 1, 2, 3);
-        $otherNumbers = new NumbersWithABooleanFlag(false, 4, 5, 6);
+        $numbers = new FlaggedNumbers(true, 1, 2, 3);
+        $otherNumbers = new FlaggedNumbers(false, 4, 5, 6);
 
         $numbers = $numbers->merge($otherNumbers);
 

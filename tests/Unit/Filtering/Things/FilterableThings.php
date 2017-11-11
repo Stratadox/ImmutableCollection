@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Stratadox\ImmutableCollection\Test\Unit\Filtering\Thing;
+namespace Stratadox\ImmutableCollection\Test\Unit\Filtering\Things;
 
 use Stratadox\Collection\Filterable;
 use Stratadox\ImmutableCollection\ImmutableCollection;

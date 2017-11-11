@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Stratadox\ImmutableCollection\Test;
 
 use PHPUnit\Framework\TestCase;
-use Stratadox\ImmutableCollection\Test\Unit\Collection\SimpleCollection;
+use Stratadox\ImmutableCollection\Test\Unit\Collection\Stubs\SimpleCollection;
 
 class I_want_to_count_the_items_in_the_collection extends TestCase
 {

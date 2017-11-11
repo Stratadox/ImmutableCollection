@@ -8,7 +8,7 @@ use Stratadox\Collection\Searchable;
 use Stratadox\ImmutableCollection\ImmutableCollection;
 use Stratadox\ImmutableCollection\Searching;
 
-class SearchableThings extends ImmutableCollection implements Searchable
+class Things extends ImmutableCollection implements Searchable
 {
     use Searching;
 

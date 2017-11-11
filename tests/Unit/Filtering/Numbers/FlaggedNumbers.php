@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Stratadox\ImmutableCollection\Test\Unit\Merging\Numbers;
+namespace Stratadox\ImmutableCollection\Test\Unit\Filtering\Numbers;
 
 use Stratadox\Collection\Collection;
-use Stratadox\Collection\Mergeable;
+use Stratadox\Collection\Filterable;
+use Stratadox\ImmutableCollection\Filtering;
 use Stratadox\ImmutableCollection\ImmutableCollection;
-use Stratadox\ImmutableCollection\Merging;
 
-class NumbersWithABooleanFlag extends ImmutableCollection implements Mergeable
+class FlaggedNumbers extends ImmutableCollection implements Filterable
 {
-    use Merging;
+    use Filtering;
 
     private $flag;
 

@@ -6,9 +6,9 @@ namespace Stratadox\ImmutableCollection\Test;
 
 use PHPUnit\Framework\TestCase;
 use Stratadox\Collection\NotFound;
-use Stratadox\ImmutableCollection\Test\Unit\Searching\Numbers\SearchableNonRestrictiveNumbers;
-use Stratadox\ImmutableCollection\Test\Unit\Searching\Numbers\SearchableNumbers;
-use Stratadox\ImmutableCollection\Test\Unit\Searching\Things\SearchableThings;
+use Stratadox\ImmutableCollection\Test\Unit\Searching\Numbers\LooselyTypedNumbers;
+use Stratadox\ImmutableCollection\Test\Unit\Searching\Numbers\Numbers;
+use Stratadox\ImmutableCollection\Test\Unit\Searching\Things\Things;
 use Stratadox\ImmutableCollection\Test\Unit\Searching\Things\Thing;
 
 class I_want_to_find_the_position_of_an_item_in_the_collection extends TestCase
@@ -16,7 +16,7 @@ class I_want_to_find_the_position_of_an_item_in_the_collection extends TestCase
     /** @scenario */
     function finding_the_position_of_a_number()
     {
-        $collection = new SearchableNumbers(1, 2, 25);
+        $collection = new Numbers(1, 2, 25);
 
         $this->assertSame(2, $collection->find(25));
     }
@@ -24,7 +24,7 @@ class I_want_to_find_the_position_of_an_item_in_the_collection extends TestCase
     /** @scenario */
     function value_finding_uses_strict_typing()
     {
-        $collection = new SearchableNonRestrictiveNumbers(1, 2, 3, '2');
+        $collection = new LooselyTypedNumbers(1, 2, 3, '2');
 
         $this->assertSame(3, $collection->find('2'));
     }
@@ -32,7 +32,7 @@ class I_want_to_find_the_position_of_an_item_in_the_collection extends TestCase
     /** @scenario */
     function searching_for_something_that_does_not_exist_throws_an_exception()
     {
-        $collection = new SearchableNumbers(1, 2, 3);
+        $collection = new Numbers(1, 2, 3);
 
         $this->expectException(NotFound::class);
 
@@ -42,7 +42,7 @@ class I_want_to_find_the_position_of_an_item_in_the_collection extends TestCase
     /** @scenario */
     function finding_objects_goes_by_value_by_default()
     {
-        $collection = new SearchableThings(
+        $collection = new Things(
             Thing::named('Foo'),
             Thing::named('Bar')
         );
@@ -55,7 +55,7 @@ class I_want_to_find_the_position_of_an_item_in_the_collection extends TestCase
     function finding_objects_goes_by_reference_if_desired()
     {
         $foo = Thing::named('Foo');
-        $collection = new SearchableThings(
+        $collection = new Things(
             Thing::named('Foo'),
             Thing::named('Bar'),
             $foo
@@ -67,7 +67,7 @@ class I_want_to_find_the_position_of_an_item_in_the_collection extends TestCase
     /** @scenario */
     function searching_by_reference_for_a_non_contained_object_throws_an_exception()
     {
-        $collection = new SearchableThings(Thing::named('Foo'));
+        $collection = new Things(Thing::named('Foo'));
 
         $this->expectException(NotFound::class);
 

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Stratadox\ImmutableCollection\Test;
 
 use PHPUnit\Framework\TestCase;
-use Stratadox\ImmutableCollection\Test\Unit\Appending\Numbers;
-use Stratadox\ImmutableCollection\Test\Unit\Appending\NumbersWithABooleanFlag;
+use Stratadox\ImmutableCollection\Test\Unit\Appending\Numbers\Numbers;
+use Stratadox\ImmutableCollection\Test\Unit\Appending\Numbers\FlaggedNumbers;
 use TypeError;
 
 class I_want_to_add_items_to_the_collection extends TestCase
@@ -44,7 +44,7 @@ class I_want_to_add_items_to_the_collection extends TestCase
     /** @scenario */
     function adding_items_preserves_my_boolean_flag()
     {
-        $numbers = new NumbersWithABooleanFlag(true, 1, 2, 3);
+        $numbers = new FlaggedNumbers(true, 1, 2, 3);
 
         $numbers = $numbers->add(4);
 

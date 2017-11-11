@@ -6,7 +6,7 @@ namespace Stratadox\ImmutableCollection\Test;
 
 use PHPUnit\Framework\TestCase;
 use Stratadox\Collection\NotAllowed;
-use Stratadox\ImmutableCollection\Test\Unit\Collection\SimpleCollection;
+use Stratadox\ImmutableCollection\Test\Unit\Collection\Stubs\SimpleCollection;
 
 class I_want_my_collection_to_be_immutable extends TestCase
 {

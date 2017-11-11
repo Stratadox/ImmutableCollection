@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Stratadox\ImmutableCollection\Test;
 
 use PHPUnit\Framework\TestCase;
-use Stratadox\ImmutableCollection\Test\Unit\Collection\SimpleCollection;
+use Stratadox\ImmutableCollection\Test\Unit\Collection\Stubs\SimpleCollection;
 
 class I_want_to_detect_if_the_collection_position_is_filled extends TestCase
 {

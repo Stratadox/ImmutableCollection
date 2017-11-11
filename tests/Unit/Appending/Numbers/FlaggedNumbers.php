@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Stratadox\ImmutableCollection\Test\Unit\Appending;
+namespace Stratadox\ImmutableCollection\Test\Unit\Appending\Numbers;
 
 
 use Stratadox\Collection\Appendable;
@@ -10,7 +10,7 @@ use Stratadox\Collection\Collection;
 use Stratadox\ImmutableCollection\Appending;
 use Stratadox\ImmutableCollection\ImmutableCollection;
 
-class NumbersWithABooleanFlag extends ImmutableCollection implements Appendable
+class FlaggedNumbers extends ImmutableCollection implements Appendable
 {
     use Appending;
 

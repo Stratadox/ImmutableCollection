@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Stratadox\ImmutableCollection\Test;
 
 use PHPUnit\Framework\TestCase;
-use Stratadox\ImmutableCollection\Test\Unit\Altering\Numbers;
-use Stratadox\ImmutableCollection\Test\Unit\Altering\NumbersWithABooleanFlag;
+use Stratadox\ImmutableCollection\Test\Unit\Altering\Numbers\Numbers;
+use Stratadox\ImmutableCollection\Test\Unit\Altering\Numbers\FlaggedNumbers;
 
 class I_want_to_change_items_in_the_collection extends TestCase
 {
@@ -33,7 +33,7 @@ class I_want_to_change_items_in_the_collection extends TestCase
     /** @scenario */
     function changing_items_preserves_my_boolean_flag()
     {
-        $numbers = new NumbersWithABooleanFlag(true, 1, 2, 3);
+        $numbers = new FlaggedNumbers(true, 1, 2, 3);
 
         $numbers = $numbers->change(1, 10);
 

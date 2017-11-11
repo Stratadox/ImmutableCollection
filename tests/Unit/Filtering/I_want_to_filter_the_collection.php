@@ -8,10 +8,10 @@ use PHPUnit\Framework\TestCase;
 use Stratadox\Collection\Collection;
 use Stratadox\ImmutableCollection\Test\Unit\Filtering\Numbers\AreLargerThan;
 use Stratadox\ImmutableCollection\Test\Unit\Filtering\Numbers\Numbers;
-use Stratadox\ImmutableCollection\Test\Unit\Filtering\Numbers\NumbersWithABooleanFlag;
-use Stratadox\ImmutableCollection\Test\Unit\Filtering\Thing\FilterableThings;
-use Stratadox\ImmutableCollection\Test\Unit\Filtering\Thing\HaveANameStartingWith;
-use Stratadox\ImmutableCollection\Test\Unit\Filtering\Thing\Thing;
+use Stratadox\ImmutableCollection\Test\Unit\Filtering\Numbers\FlaggedNumbers;
+use Stratadox\ImmutableCollection\Test\Unit\Filtering\Things\FilterableThings;
+use Stratadox\ImmutableCollection\Test\Unit\Filtering\Things\HaveANameStartingWith;
+use Stratadox\ImmutableCollection\Test\Unit\Filtering\Things\Thing;
 
 class I_want_to_filter_the_collection extends TestCase
 {
@@ -29,7 +29,7 @@ class I_want_to_filter_the_collection extends TestCase
     /** @scenario */
     function filtering_numbers_preserves_my_boolean_flag()
     {
-        $numbers = new NumbersWithABooleanFlag(true, 1, 2, 3, 4, 5);
+        $numbers = new FlaggedNumbers(true, 1, 2, 3, 4, 5);
 
         $numbers = $numbers->that(AreLargerThan::theNumber(2));
 

@@ -2,17 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Stratadox\ImmutableCollection\Test\Unit\Merging\Double;
+namespace Stratadox\ImmutableCollection\Test\Unit\Merging\Stubs;
 
+use StdClass;
 use Stratadox\Collection\Mergeable;
 use Stratadox\ImmutableCollection\ImmutableCollection;
 use Stratadox\ImmutableCollection\Merging;
 
-class ExtCollection extends ImmutableCollection implements Mergeable
+class StdCollection extends ImmutableCollection implements Mergeable
 {
     use Merging;
 
-    public function __construct(ExtClass ...$items)
+    public function __construct(StdClass ...$items)
     {
         parent::__construct(...$items);
     }

@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Stratadox\ImmutableCollection\Test\Unit\Filtering\Numbers;
+namespace Stratadox\ImmutableCollection\Test\Unit\Altering\Numbers;
 
+use Stratadox\Collection\Alterable;
 use Stratadox\Collection\Collection;
-use Stratadox\Collection\Filterable;
-use Stratadox\ImmutableCollection\Filtering;
+use Stratadox\ImmutableCollection\Altering;
 use Stratadox\ImmutableCollection\ImmutableCollection;
 
-class NumbersWithABooleanFlag extends ImmutableCollection implements Filterable
+class FlaggedNumbers extends ImmutableCollection implements Alterable
 {
-    use Filtering;
+    use Altering;
 
     private $flag;
 

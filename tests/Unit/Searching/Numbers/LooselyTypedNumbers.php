@@ -8,7 +8,7 @@ use Stratadox\Collection\Searchable;
 use Stratadox\ImmutableCollection\ImmutableCollection;
 use Stratadox\ImmutableCollection\Searching;
 
-class SearchableNonRestrictiveNumbers extends ImmutableCollection implements Searchable
+class LooselyTypedNumbers extends ImmutableCollection implements Searchable
 {
     use Searching;
 }

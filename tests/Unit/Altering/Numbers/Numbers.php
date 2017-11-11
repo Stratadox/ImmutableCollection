@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Stratadox\ImmutableCollection\Test\Unit\Altering;
+namespace Stratadox\ImmutableCollection\Test\Unit\Altering\Numbers;
 
 use Stratadox\Collection\Alterable;
 use Stratadox\ImmutableCollection\Altering;
