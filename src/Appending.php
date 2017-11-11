@@ -8,6 +8,15 @@ use function array_merge;
 use Stratadox\Collection\Appendable;
 use Stratadox\Collection\Collection;
 
+/**
+ * Behaviour to allow "appending" the immutable collection.
+ *
+ * Provides access to appending behaviour in the form of a method that
+ * returns a modified copy of the original (immutable) collection.
+ *
+ * @package Stratadox\Collection
+ * @author Stratadox
+ */
 trait Appending
 {
     /**

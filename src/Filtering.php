@@ -9,6 +9,15 @@ use Stratadox\Collection\Collection;
 use Stratadox\Collection\Filterable;
 use Stratadox\Specification\Contract\Satisfiable;
 
+/**
+ * Behaviour to allow "filtering" the immutable collection.
+ *
+ * Provides access to filtering behaviour in the form of a method that
+ * returns a modified copy of the original (immutable) collection.
+ *
+ * @package Stratadox\Collection
+ * @author Stratadox
+ */
 trait Filtering
 {
     /**
