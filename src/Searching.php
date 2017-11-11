@@ -8,6 +8,16 @@ use function array_search;
 use Stratadox\Collection\Collection;
 use Stratadox\Collection\NotFound;
 
+/**
+ * Behaviour to allow "searching" the immutable collection.
+ *
+ * Provides access to searching behaviour in the form of methods that
+ * return information on the existence or position of the items in the
+ * original collection.
+ *
+ * @package Stratadox\Collection
+ * @author Stratadox
+ */
 trait Searching
 {
     /** @see Searchable::has() */

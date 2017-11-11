@@ -7,6 +7,15 @@ namespace Stratadox\ImmutableCollection;
 use function array_reduce;
 use Closure;
 
+/**
+ * Behaviour to allow "reducing" the immutable collection.
+ *
+ * Provides access to reduction behaviour in the form of a method that
+ * returns a reduced value based on the original collection.
+ *
+ * @package Stratadox\Collection
+ * @author Stratadox
+ */
 trait Reducing
 {
     /**
