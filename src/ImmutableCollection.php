@@ -63,4 +63,9 @@ abstract class ImmutableCollection extends SplFixedArray implements Collection
     {
         return $this->toArray();
     }
+
+    protected function newCopy(array $items) : Collection
+    {
+        return new static(...$items);
+    }
 }
