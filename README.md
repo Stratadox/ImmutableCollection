@@ -33,8 +33,6 @@ The most basic form of collection might look something like the following:
 ```php
 <?php
 
-use Stratadox\ImmutableCollection\ImmutableCollection;
-
 class Numbers extends ImmutableCollection
 {
     public function __construct(int ...$items)
@@ -49,10 +47,6 @@ traits for the particular concrete collection:
 
 ```php
 <?php
-
-use Stratadox\Collection\Appendable;
-use Stratadox\ImmutableCollection\ImmutableCollection;
-use Stratadox\ImmutableCollection\Appending;
 
 class Numbers extends ImmutableCollection implements Appendable
 {
@@ -72,12 +66,6 @@ Similarly, multiple kinds of behaviour can be used simultaneously:
 
 ```php
 <?php
-
-use Stratadox\Collection\Appendable;
-use Stratadox\Collection\Purgeable;
-use Stratadox\ImmutableCollection\ImmutableCollection;
-use Stratadox\ImmutableCollection\Appending;
-use Stratadox\ImmutableCollection\Purging;
 
 class Numbers extends ImmutableCollection implements Appendable, Purgeable
 {
