@@ -11,7 +11,7 @@ before_script:
 
 script:
   - mkdir -p build/logs
-  - ./vendor/bin/phpunit -c phpunit.xml
+  - ./vendor/bin/phpunit -c ./phpunit.xml
 
 after_success:
   - travis_retry php vendor/bin/coveralls
