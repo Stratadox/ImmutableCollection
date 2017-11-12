@@ -10,7 +10,7 @@
 
     <testsuites>
         <testsuite name="Stratadox/ImmutableCollection test suite">
-            <directory suffix=".php">./tests/</directory>
+            <directory suffix=".php">tests</directory>
         </testsuite>
     </testsuites>
 
