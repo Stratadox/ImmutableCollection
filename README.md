@@ -28,7 +28,8 @@ composer require stratadox/immutable-collection
 
 ## Basic usage
 
-The most basic form of collection might look something like the following:
+The most basic implementation of the immutable collection might look something 
+like the following:
 
 ```php
 <?php
