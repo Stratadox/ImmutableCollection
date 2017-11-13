@@ -61,6 +61,8 @@ class Numbers extends ImmutableCollection implements Appendable
 
 $numbers = new Numbers(1, 2, 3);
 $numbers = $numbers->add(4);
+
+assert($numbers == new Numbers(1, 2, 3, 4));
 ```
 
 Similarly, multiple kinds of behaviour can be used simultaneously:
@@ -68,13 +70,20 @@ Similarly, multiple kinds of behaviour can be used simultaneously:
 ```php
 <?php
 
-class Numbers extends ImmutableCollection implements Appendable, Purgeable
+class Numbers extends ImmutableCollection implements Mergeable, Purgeable
 {
-    use Appending, Purging;
+    use Merging, Purging;
 
     public function __construct(int ...$items)
     {
         parent::__construct(...$items);
     }
 }
+
+$numbers = new Numbers(1, 2, 3);
+$numbers = $numbers->merge(new Numbers(4, 5, 6));
+$numbers = $numbers->remove(3);
+
+assert($numbers == new Numbers(1, 2, 4, 5, 6));
 ```
+
