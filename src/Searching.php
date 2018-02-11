@@ -20,19 +20,31 @@ use Stratadox\Collection\NotFound;
  */
 trait Searching
 {
-    /** @see Searchable::has() */
+    /**
+     * @see Searchable::has()
+     * @param mixed $item
+     * @return bool
+     */
     public function has($item) : bool
     {
         return $this->positionOf($item) !== false;
     }
 
-    /** @see Searchable::hasThe() */
+    /**
+     * @see Searchable::hasThe()
+     * @param object $object
+     * @return bool
+     */
     public function hasThe($object) : bool
     {
         return array_search($object, $this->items(), true) !== false;
     }
 
-    /** @see Searchable::find() */
+    /**
+     * @see Searchable::find()
+     * @param mixed $item
+     * @return int
+     */
     public function find($item) : int
     {
         $position = $this->positionOf($item);
@@ -40,7 +52,11 @@ trait Searching
         return $position;
     }
 
-    /** @see Searchable::findThe() */
+    /**
+     * @see Searchable::findThe()
+     * @param object $object
+     * @return int
+     */
     public function findThe($object) : int
     {
         $position = array_search($object, $this->items(), true);
@@ -48,7 +64,10 @@ trait Searching
         return $position;
     }
 
-    /** @return int|bool */
+    /**
+     * @param mixed $item The item we're looking for.
+     * @return int|bool   The position or false.
+     */
     private function positionOf($item)
     {
         if (is_object($item)) {
@@ -57,7 +76,11 @@ trait Searching
         return array_search($item, $this->items(), true);
     }
 
-    /** @throws NotFound */
+    /**
+     * @param int|bool $position            The position or false.
+     * @param mixed    $whatWeAreLookingFor The item we're looking for.
+     * @throws NotFound                     When the position is false.
+     */
     private function mustBeValid($position, $whatWeAreLookingFor) : void
     {
         if ($position === false) {

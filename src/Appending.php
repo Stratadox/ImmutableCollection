@@ -20,22 +20,22 @@ use Stratadox\Collection\Collection;
 trait Appending
 {
     /**
-     * @return Appendable|static
      * @see Appendable::add()
+     * @param array ...$newItems
+     * @return Appendable|static
      */
     public function add(...$newItems) : Appendable
     {
         return $this->newCopy(array_merge($this->items(), $newItems));
     }
 
-    /**
-     * @see Collection::items()
-     */
+    /** @see Collection::items() */
     abstract public function items() : array;
 
     /**
-     * @return Collection|static
      * @see ImmutableCollection::newCopy()
+     * @param array $items
+     * @return Collection|static
      */
     abstract protected function newCopy(array $items) : Collection;
 }

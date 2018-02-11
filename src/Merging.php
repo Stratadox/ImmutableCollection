@@ -20,22 +20,22 @@ use Stratadox\Collection\Mergeable;
 trait Merging
 {
     /**
-     * @return Mergeable|static
      * @see Mergeable::merge()
+     * @param Collection $other
+     * @return Mergeable|static
      */
     public function merge(Collection $other) : Mergeable
     {
         return $this->newCopy(array_merge($this->items(), $other->items()));
     }
 
-    /**
-     * @see Collection::items()
-     */
+    /** @see Collection::items() */
     abstract public function items() : array;
 
     /**
-     * @return Collection|static
      * @see ImmutableCollection::newCopy()
+     * @param array $items
+     * @return Collection|static
      */
     abstract protected function newCopy(array $items) : Collection;
 }

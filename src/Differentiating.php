@@ -7,6 +7,16 @@ namespace Stratadox\ImmutableCollection;
 use Stratadox\Collection\Collection;
 use Stratadox\Collection\Differentiable;
 
+/**
+ * Behaviour to find the difference between multiple collections.
+ *
+ * Provides access to differentiating behaviour in the form of a method that
+ * returns a modified copy of the original (immutable) collection with all
+ * values omitted that also appear in one of the other collections.
+ *
+ * @package Stratadox\Collection
+ * @author Stratadox
+ */
 trait Differentiating
 {
     /**
@@ -29,16 +39,13 @@ trait Differentiating
         ));
     }
 
-    /**
-     * @see Collection::items()
-     * @return array The items in the collection.
-     */
+    /** @see Collection::items() */
     abstract public function items() : array;
 
     /**
      * @see ImmutableCollection::newCopy()
-     * @param array $items       The items to include in the new copy.
-     * @return Collection|static The altered copy.
+     * @param array $items
+     * @return Collection|static
      */
     abstract protected function newCopy(array $items) : Collection;
 }

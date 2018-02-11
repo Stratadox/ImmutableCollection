@@ -19,8 +19,10 @@ use Stratadox\Collection\Collection;
 trait Altering
 {
     /**
-     * @return Alterable|static
      * @see Alterable::change()
+     * @param int   $index
+     * @param mixed $newItem
+     * @return Alterable|static
      */
     public function change(int $index, $newItem) : Alterable
     {
@@ -29,14 +31,13 @@ trait Altering
         return $this->newCopy($items);
     }
 
-    /**
-     * @see Collection::items()
-     */
+    /** @see Collection::items() */
     abstract public function items() : array;
 
     /**
-     * @return Collection|static
      * @see ImmutableCollection::newCopy()
+     * @param array $items
+     * @return Collection|static
      */
     abstract protected function newCopy(array $items) : Collection;
 }

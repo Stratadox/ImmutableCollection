@@ -20,15 +20,15 @@ trait Reducing
 {
     /**
      * @see Reducible::reduce()
-     * @see array_reduce
+     * @param Closure $function
+     * @param mixed   $initial
+     * @return mixed
      */
     public function reduce(Closure $function, $initial = null)
     {
         return array_reduce($this->items(), $function, $initial);
     }
 
-    /**
-     * @see Collection::items()
-     */
+    /** @see Collection::items() */
     abstract public function items() : array;
 }

@@ -19,8 +19,9 @@ use Stratadox\Collection\Purgeable;
 trait Purging
 {
     /**
-     * @return Purgeable|static
      * @see Purgeable::delete()
+     * @param int $index
+     * @return Purgeable|static
      */
     public function delete(int $index) : Purgeable
     {
@@ -30,8 +31,9 @@ trait Purging
     }
 
     /**
-     * @return Purgeable|static
      * @see Purgeable::remove()
+     * @param mixed ...$itemsToRemove
+     * @return Purgeable|static
      */
     public function remove(...$itemsToRemove) : Purgeable
     {
@@ -43,14 +45,13 @@ trait Purging
         ));
     }
 
-    /**
-     * @see Collection::items()
-     */
+    /** @see Collection::items() */
     abstract public function items() : array;
 
     /**
-     * @return Collection|static
      * @see ImmutableCollection::newCopy()
+     * @param array $items
+     * @return Collection|static
      */
     abstract protected function newCopy(array $items) : Collection;
 }

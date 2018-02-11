@@ -21,8 +21,9 @@ use Stratadox\Specification\Contract\Satisfiable;
 trait Filtering
 {
     /**
-     * @return Filterable|static
      * @see Filterable::that
+     * @param Satisfiable $condition
+     * @return Filterable|static
      */
     public function that(Satisfiable $condition) : Filterable
     {
@@ -31,14 +32,13 @@ trait Filtering
         ));
     }
 
-    /**
-     * @see Collection::items()
-     */
+    /** @see Collection::items() */
     abstract public function items() : array;
 
     /**
-     * @return Collection|static
      * @see ImmutableCollection::newCopy()
+     * @param array $items
+     * @return Collection|static
      */
     abstract protected function newCopy(array $items) : Collection;
 }

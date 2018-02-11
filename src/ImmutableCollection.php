@@ -24,6 +24,11 @@ use Stratadox\Collection\NotAllowed;
  */
 abstract class ImmutableCollection extends SplFixedArray implements Collection
 {
+    /**
+     * Make a new immutable collection.
+     *
+     * @param array ...$ofTheItems The items to use.
+     */
     public function __construct(...$ofTheItems)
     {
         parent::__construct(count($ofTheItems));
@@ -33,12 +38,25 @@ abstract class ImmutableCollection extends SplFixedArray implements Collection
         }
     }
 
-    final public static function fromArray($array, $save_indexes = null)
+    /**
+     * Imports a collection from an array.
+     *
+     * @param array     $array        The array to import.
+     * @param bool|null $save_indexes Ignored parameter.
+     * @return self|static
+     */
+    final public static function fromArray($array, $save_indexes = null) : self
     {
         return new static(...$array);
     }
 
-    /** @throws NotAllowed */
+    /**
+     * Disallows use of the offsetSet method.
+     *
+     * @param int|mixed $index The index that may not be mutated.
+     * @param mixed     $value The value that will not be written.
+     * @throws NotAllowed      Whenever called upon.
+     */
     final public function offsetSet($index, $value)
     {
         if (is_null($index)) {
@@ -47,23 +65,45 @@ abstract class ImmutableCollection extends SplFixedArray implements Collection
         throw CannotAlterCollection::byOverWriting($this, $index);
     }
 
-    /** @throws NotAllowed */
+    /**
+     * Disallows use of the offsetUnset method.
+     *
+     * @param int|mixed $index The index that may not be unset.
+     * @throws NotAllowed      Whenever called upon.
+     */
     final public function offsetUnset($index)
     {
         throw CannotAlterCollection::byRemoving($this, $index);
     }
 
-    /** @throws NotAllowed */
+    /**
+     * Disallows use of the setSize method.
+     *
+     * @param int $size   The new size that will not be assigned.
+     * @return int        In case false === true.
+     * @throws NotAllowed Whenever called upon.
+     */
     final public function setSize($size)
     {
         throw CannotAlterCollection::byResizingTo($this, $size);
     }
 
+    /**
+     * Yields an array copy of the collection.
+     *
+     * @return array An array representation of the items in the collection.
+     */
     public function items() : array
     {
         return $this->toArray();
     }
 
+    /**
+     * Produces a new copy of this collection, using a new set of values.
+     *
+     * @param array $items       The items to include in the new copy.
+     * @return Collection|static The altered copy.
+     */
     protected function newCopy(array $items) : Collection
     {
         return new static(...$items);
