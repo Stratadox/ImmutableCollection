@@ -7,7 +7,10 @@ namespace Stratadox\ImmutableCollection\Test;
 use PHPUnit\Framework\TestCase;
 use Stratadox\ImmutableCollection\Test\Unit\Collection\Stubs\SimpleCollection;
 
-class I_want_to_count_the_items_in_the_collection extends TestCase
+/**
+ * @covers \Stratadox\ImmutableCollection\ImmutableCollection
+ */
+class ImmutableCollection_is_countable extends TestCase
 {
     /** @test */
     function counting_the_number_of_items_in_the_collection()

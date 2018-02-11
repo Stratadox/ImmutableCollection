@@ -9,7 +9,11 @@ use Stratadox\ImmutableCollection\Test\Unit\Appending\Numbers\Numbers;
 use Stratadox\ImmutableCollection\Test\Unit\Appending\Numbers\FlaggedNumbers;
 use TypeError;
 
-class I_want_to_add_items_to_the_collection extends TestCase
+/**
+ * @covers \Stratadox\ImmutableCollection\Appending
+ * @covers \Stratadox\ImmutableCollection\ImmutableCollection
+ */
+class Appending_items_to_the_collection extends TestCase
 {
     /** @test */
     function adding_an_item_to_a_collection()

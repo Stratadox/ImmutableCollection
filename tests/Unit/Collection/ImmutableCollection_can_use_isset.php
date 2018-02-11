@@ -7,7 +7,10 @@ namespace Stratadox\ImmutableCollection\Test;
 use PHPUnit\Framework\TestCase;
 use Stratadox\ImmutableCollection\Test\Unit\Collection\Stubs\SimpleCollection;
 
-class I_want_to_detect_if_the_collection_position_is_filled extends TestCase
+/**
+ * @covers \Stratadox\ImmutableCollection\ImmutableCollection
+ */
+class ImmutableCollection_can_use_isset extends TestCase
 {
     /** @test */
     function using_isset_to_check_if_a_position_is_filled()

@@ -10,7 +10,11 @@ use Stratadox\ImmutableCollection\Test\Unit\Purging\Numbers\FlaggedNumbers;
 use Stratadox\ImmutableCollection\Test\Unit\Purging\Thing\Things;
 use Stratadox\ImmutableCollection\Test\Unit\Purging\Thing\Thing;
 
-class I_want_to_remove_items_from_the_collection extends TestCase
+/**
+ * @covers \Stratadox\ImmutableCollection\Purging
+ * @covers \Stratadox\ImmutableCollection\ImmutableCollection
+ */
+class Purging_items_from_the_collection_by_value extends TestCase
 {
     /** @test */
     function removing_an_item_goes_by_value()

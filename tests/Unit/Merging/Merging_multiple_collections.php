@@ -13,7 +13,11 @@ use Stratadox\ImmutableCollection\Test\Unit\Merging\Numbers\MergeableNumbers;
 use Stratadox\ImmutableCollection\Test\Unit\Merging\Numbers\FlaggedNumbers;
 use TypeError;
 
-class I_want_to_merge_collections extends TestCase
+/**
+ * @covers \Stratadox\ImmutableCollection\Merging
+ * @covers \Stratadox\ImmutableCollection\ImmutableCollection
+ */
+class Merging_multiple_collections extends TestCase
 {
     /** @test */
     function merging_different_collections_of_compatible_types()

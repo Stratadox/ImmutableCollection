@@ -11,7 +11,12 @@ use Stratadox\ImmutableCollection\Test\Unit\Searching\Numbers\Numbers;
 use Stratadox\ImmutableCollection\Test\Unit\Searching\Things\Things;
 use Stratadox\ImmutableCollection\Test\Unit\Searching\Things\Thing;
 
-class I_want_to_find_the_position_of_an_item_in_the_collection extends TestCase
+/**
+ * @covers \Stratadox\ImmutableCollection\Searching
+ * @covers \Stratadox\ImmutableCollection\NoSuchValue
+ * @covers \Stratadox\ImmutableCollection\ImmutableCollection
+ */
+class Searching_for_the_position_of_the_value extends TestCase
 {
     /** @test */
     function finding_the_position_of_a_number()

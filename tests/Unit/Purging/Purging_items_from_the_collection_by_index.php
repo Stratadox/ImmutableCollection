@@ -8,7 +8,11 @@ use PHPUnit\Framework\TestCase;
 use Stratadox\ImmutableCollection\Test\Unit\Purging\Numbers\Numbers;
 use Stratadox\ImmutableCollection\Test\Unit\Purging\Numbers\FlaggedNumbers;
 
-class I_want_to_delete_items_from_the_collection extends TestCase
+/**
+ * @covers \Stratadox\ImmutableCollection\Purging
+ * @covers \Stratadox\ImmutableCollection\ImmutableCollection
+ */
+class Purging_items_from_the_collection_by_index extends TestCase
 {
     /** @test */
     function deleting_an_index_removes_the_item()

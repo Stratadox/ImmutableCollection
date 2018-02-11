@@ -13,7 +13,11 @@ use Stratadox\ImmutableCollection\Test\Unit\Filtering\Things\FilterableThings;
 use Stratadox\ImmutableCollection\Test\Unit\Filtering\Things\HaveANameStartingWith;
 use Stratadox\ImmutableCollection\Test\Unit\Filtering\Things\Thing;
 
-class I_want_to_filter_the_collection extends TestCase
+/**
+ * @covers \Stratadox\ImmutableCollection\Filtering
+ * @covers \Stratadox\ImmutableCollection\ImmutableCollection
+ */
+class Filtering_the_collection extends TestCase
 {
     /** @test */
     function filtering_numbers_larger_than_2()

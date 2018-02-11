@@ -9,7 +9,11 @@ use Stratadox\ImmutableCollection\Test\Unit\Searching\Numbers\Numbers;
 use Stratadox\ImmutableCollection\Test\Unit\Searching\Things\Things;
 use Stratadox\ImmutableCollection\Test\Unit\Searching\Things\Thing;
 
-class I_want_to_check_if_a_value_exists_in_the_collection extends TestCase
+/**
+ * @covers \Stratadox\ImmutableCollection\Searching
+ * @covers \Stratadox\ImmutableCollection\ImmutableCollection
+ */
+class Searching_for_whether_the_value_exists extends TestCase
 {
     /** @test */
     function checking_if_a_value_exists()

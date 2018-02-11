@@ -8,7 +8,10 @@ use PHPUnit\Framework\TestCase;
 use Stratadox\ImmutableCollection\Test\Unit\Collection\Stubs\Numbers;
 use TypeError;
 
-class I_want_to_import_collections extends TestCase
+/**
+ * @covers \Stratadox\ImmutableCollection\ImmutableCollection
+ */
+class ImmutableCollection_can_be_imported extends TestCase
 {
     /** @test */
     function importing_through_fromArray()

@@ -8,7 +8,11 @@ use PHPUnit\Framework\TestCase;
 use Stratadox\Collection\NotAllowed;
 use Stratadox\ImmutableCollection\Test\Unit\Collection\Stubs\SimpleCollection;
 
-class I_want_my_collection_to_be_immutable extends TestCase
+/**
+ * @covers \Stratadox\ImmutableCollection\ImmutableCollection
+ * @covers \Stratadox\ImmutableCollection\CannotAlterCollection
+ */
+class ImmutableCollection_is_immutable extends TestCase
 {
     /** @test */
     function cannot_set_item_through_array_syntax()

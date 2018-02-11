@@ -7,7 +7,10 @@ namespace Stratadox\ImmutableCollection\Test;
 use PHPUnit\Framework\TestCase;
 use Stratadox\ImmutableCollection\Test\Unit\Collection\Stubs\SimpleCollection;
 
-class I_want_to_view_the_items_in_the_collection extends TestCase
+/**
+ * @covers \Stratadox\ImmutableCollection\ImmutableCollection
+ */
+class ImmutableCollection_can_be_viewed extends TestCase
 {
     /** @test */
     function viewing_the_collection_through_array_syntax()

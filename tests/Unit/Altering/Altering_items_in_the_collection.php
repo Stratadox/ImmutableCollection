@@ -8,7 +8,11 @@ use PHPUnit\Framework\TestCase;
 use Stratadox\ImmutableCollection\Test\Unit\Altering\Numbers\Numbers;
 use Stratadox\ImmutableCollection\Test\Unit\Altering\Numbers\FlaggedNumbers;
 
-class I_want_to_change_items_in_the_collection extends TestCase
+/**
+ * @covers \Stratadox\ImmutableCollection\Altering
+ * @covers \Stratadox\ImmutableCollection\ImmutableCollection
+ */
+class Altering_items_in_the_collection extends TestCase
 {
     /** @test */
     function changing_an_item_in_the_collection()

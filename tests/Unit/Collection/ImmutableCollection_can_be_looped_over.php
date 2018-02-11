@@ -7,7 +7,10 @@ namespace Stratadox\ImmutableCollection\Test;
 use PHPUnit\Framework\TestCase;
 use Stratadox\ImmutableCollection\Test\Unit\Collection\Stubs\SimpleCollection;
 
-class I_want_to_loop_through_the_collection extends TestCase
+/**
+ * @covers \Stratadox\ImmutableCollection\ImmutableCollection
+ */
+class ImmutableCollection_can_be_looped_over extends TestCase
 {
     /** @test */
     function sum_the_collection_using_a_foreach_loop()

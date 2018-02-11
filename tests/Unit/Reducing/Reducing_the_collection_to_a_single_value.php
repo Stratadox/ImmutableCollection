@@ -13,7 +13,11 @@ use Stratadox\ImmutableCollection\Test\Unit\Reducing\Calculator\CalculationResul
 use Stratadox\ImmutableCollection\Test\Unit\Reducing\Calculator\Decrement;
 use Stratadox\ImmutableCollection\Test\Unit\Reducing\Numbers\Numbers;
 
-class I_want_to_reduce_the_collection_to_a_single_value extends TestCase
+/**
+ * @covers \Stratadox\ImmutableCollection\Reducing
+ * @covers \Stratadox\ImmutableCollection\ImmutableCollection
+ */
+class Reducing_the_collection_to_a_single_value extends TestCase
 {
     /** @test */
     function summing_the_numbers_in_the_collection()
@@ -22,13 +26,9 @@ class I_want_to_reduce_the_collection_to_a_single_value extends TestCase
 
         $this->assertEquals(
             10,
-            $numbers->reduce(
-                function (int $carry, int $number) : int
-                {
-                    return $carry + $number;
-                },
-                0
-            )
+            $numbers->reduce(function (int $carry, int $number) : int {
+                return $carry + $number;
+            }, 0)
         );
     }
 
@@ -42,13 +42,13 @@ class I_want_to_reduce_the_collection_to_a_single_value extends TestCase
             Increment::with(2)
         );
 
-        $calculator = $events->reduce(
-            function (CalculationResult $theCalculation, Event $operation) : CalculationResult
-            {
-                return $operation->applyTo($theCalculation);
-            },
-            CalculationResult::startWith(0)
-        );
+        $calculator = $events->reduce(function (
+            CalculationResult $theCalculation,
+            Event $operation
+        ) : CalculationResult
+        {
+            return $operation->applyTo($theCalculation);
+        }, CalculationResult::startWith(0));
 
         $this->assertEquals(
             16,

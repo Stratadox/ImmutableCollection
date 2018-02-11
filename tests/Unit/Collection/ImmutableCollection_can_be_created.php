@@ -9,7 +9,10 @@ use Stratadox\ImmutableCollection\Test\Unit\Collection\Stubs\SimpleCollection;
 use Stratadox\ImmutableCollection\Test\Unit\Collection\Stubs\Numbers;
 use TypeError;
 
-class I_want_to_create_collections extends TestCase
+/**
+ * @covers \Stratadox\ImmutableCollection\ImmutableCollection
+ */
+class ImmutableCollection_can_be_created extends TestCase
 {
     /** @test */
     function creating_a_basic_collection_which_allows_any_value()
