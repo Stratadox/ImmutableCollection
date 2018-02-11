@@ -11,9 +11,9 @@ use Stratadox\ImmutableCollection\Test\Unit\JsonSerializing\Things\Things;
 use Stratadox\ImmutableCollection\Test\Unit\JsonSerializing\Things\NonSerializableThing;
 
 /**
- * @covers \Stratadox\ImmutableCollection\Differentiating
  * @covers \Stratadox\ImmutableCollection\JsonSerializing
  * @covers \Stratadox\ImmutableCollection\CouldNotConvertToJson
+ * @covers \Stratadox\ImmutableCollection\ImmutableCollection
  */
 class JsonSerializing_the_collection_to_a_json_string extends TestCase
 {
