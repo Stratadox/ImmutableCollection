@@ -12,6 +12,7 @@ use Stratadox\ImmutableCollection\Test\Unit\Differentiating\Things\Things;
 
 /**
  * @covers \Stratadox\ImmutableCollection\Differentiating
+ * @covers \Stratadox\ImmutableCollection\ImmutableCollection
  */
 class Differentiating_between_multiple_collections extends TestCase
 {
