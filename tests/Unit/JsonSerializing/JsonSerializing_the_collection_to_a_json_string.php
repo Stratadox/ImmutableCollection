@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 use Stratadox\Collection\ConversionFailed;
 use Stratadox\ImmutableCollection\Test\Unit\JsonSerializing\Things\Thing;
 use Stratadox\ImmutableCollection\Test\Unit\JsonSerializing\Things\Things;
-use Stratadox\ImmutableCollection\Test\Unit\JsonSerializing\Things\UnserializableThing;
+use Stratadox\ImmutableCollection\Test\Unit\JsonSerializing\Things\NonSerializableThing;
 
 /**
  * @covers \Stratadox\ImmutableCollection\Differentiating
@@ -35,8 +35,8 @@ class JsonSerializing_the_collection_to_a_json_string extends TestCase
     function serializing_a_collection_of_unserializable_things()
     {
         $things = new Things(
-            UnserializableThing::named('Foo'),
-            UnserializableThing::named('Bar')
+            NonSerializableThing::named('Foo'),
+            NonSerializableThing::named('Bar')
         );
 
         $this->expectException(ConversionFailed::class);

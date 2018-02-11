@@ -6,7 +6,7 @@ namespace Stratadox\ImmutableCollection\Test\Unit\JsonSerializing\Things;
 
 use Exception;
 
-class UnserializableThing extends Thing
+class NonSerializableThing extends Thing
 {
     function jsonSerialize()
     {
