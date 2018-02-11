@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Stratadox\ImmutableCollection\Test\Unit\Executing;
 
 use PHPUnit\Framework\TestCase;
+use Stratadox\ImmutableCollection\Test\Unit\Executing\Numbers\Numbers;
 use Stratadox\ImmutableCollection\Test\Unit\Executing\Things\Thing;
 use Stratadox\ImmutableCollection\Test\Unit\Executing\Things\Things;
 
@@ -53,6 +54,23 @@ class Executing_a_function_on_a_collection extends TestCase
 
         $this->assertSame(
             ['0) Foo', '1) Bar', '2) Baz'],
+            $this->names
+        );
+    }
+
+    /** @test */
+    function executing_a_function_on_a_collection_of_non_objects()
+    {
+        $numbers = new Numbers(11, 12, 13, 14);
+
+        $test = $this;
+
+        $numbers->execute(function (int $position, int $value) use ($test) {
+            $test->addName($position . ') ' .$value);
+        });
+
+        $this->assertSame(
+            ['0) 11', '1) 12', '2) 13', '3) 14'],
             $this->names
         );
     }
