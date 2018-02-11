@@ -10,7 +10,7 @@ use TypeError;
 
 class I_want_to_import_collections extends TestCase
 {
-    /** @scenario */
+    /** @test */
     function importing_through_fromArray()
     {
         $collection = Numbers::fromArray([1, 2, 3]);
@@ -18,7 +18,7 @@ class I_want_to_import_collections extends TestCase
         $this->assertSame([1, 2, 3], $collection->items());
     }
 
-    /** @scenario */
+    /** @test */
     function imported_items_must_be_compatible()
     {
         $this->expectException(TypeError::class);

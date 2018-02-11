@@ -9,7 +9,7 @@ use Stratadox\ImmutableCollection\Test\Unit\Collection\Stubs\SimpleCollection;
 
 class I_want_to_loop_through_the_collection extends TestCase
 {
-    /** @scenario */
+    /** @test */
     function sum_the_collection_using_a_foreach_loop()
     {
         $sum = 0;
@@ -21,7 +21,7 @@ class I_want_to_loop_through_the_collection extends TestCase
         $this->assertSame(10, $sum);
     }
 
-    /** @scenario */
+    /** @test */
     function concatenate_the_text_in_the_collection()
     {
         $message = '';

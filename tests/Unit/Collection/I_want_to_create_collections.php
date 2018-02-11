@@ -11,7 +11,7 @@ use TypeError;
 
 class I_want_to_create_collections extends TestCase
 {
-    /** @scenario */
+    /** @test */
     function creating_a_basic_collection_which_allows_any_value()
     {
         $collection = new SimpleCollection(1, 2, "3");
@@ -19,7 +19,7 @@ class I_want_to_create_collections extends TestCase
         $this->assertSame([1, 2, "3"], $collection->items());
     }
 
-    /** @scenario */
+    /** @test */
     function collections_can_assert_types_in_their_constructors()
     {
         $this->expectException(TypeError::class);
@@ -27,7 +27,7 @@ class I_want_to_create_collections extends TestCase
         new Numbers(1, 2, "3");
     }
 
-    /** @scenario */
+    /** @test */
     function creating_a_number_collection_which_allows_integer_values()
     {
         $collection = new Numbers(1, 2, 3);

@@ -15,7 +15,7 @@ use TypeError;
 
 class I_want_to_merge_collections extends TestCase
 {
-    /** @scenario */
+    /** @test */
     function merging_different_collections_of_compatible_types()
     {
         $stdObject = new StdClass;
@@ -29,7 +29,7 @@ class I_want_to_merge_collections extends TestCase
         $this->assertSame([$stdObject, $extObject], $merged->items());
     }
 
-    /** @scenario */
+    /** @test */
     function the_merging_class_defines_the_compatibility_rules()
     {
         $stdObject = new StdClass;
@@ -43,7 +43,7 @@ class I_want_to_merge_collections extends TestCase
         $extObjects->merge($stdObjects);
     }
 
-    /** @scenario */
+    /** @test */
     function merging_collections_does_not_mutate_the_original_collections()
     {
         $original = new MergeableNumbers(1, 2, 3);
@@ -56,7 +56,7 @@ class I_want_to_merge_collections extends TestCase
         $this->assertSame([4, 5, 6], $other->items());
     }
 
-    /** @scenario */
+    /** @test */
     function merging_collections_preserves_the_boolean_flag_of_the_merging_collection()
     {
         $numbers = new FlaggedNumbers(true, 1, 2, 3);
@@ -67,7 +67,7 @@ class I_want_to_merge_collections extends TestCase
         $this->assertTrue($numbers->flagged());
     }
 
-    /** @scenario */
+    /** @test */
     function cannot_merge_collections_of_incompatible_types()
     {
         $original = new MergeableNumbers(1, 2, 3);

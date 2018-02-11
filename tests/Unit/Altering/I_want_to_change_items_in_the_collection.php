@@ -10,7 +10,7 @@ use Stratadox\ImmutableCollection\Test\Unit\Altering\Numbers\FlaggedNumbers;
 
 class I_want_to_change_items_in_the_collection extends TestCase
 {
-    /** @scenario */
+    /** @test */
     function changing_an_item_in_the_collection()
     {
         $collection = new Numbers(1, 2, 3);
@@ -20,7 +20,7 @@ class I_want_to_change_items_in_the_collection extends TestCase
         $this->assertSame([1, 10, 3], $collection->items());
     }
 
-    /** @scenario */
+    /** @test */
     function changing_items_does_not_mutate_the_original_collection()
     {
         $collection = new Numbers(1, 2, 3);
@@ -30,7 +30,7 @@ class I_want_to_change_items_in_the_collection extends TestCase
         $this->assertSame([1, 2, 3], $collection->items());
     }
 
-    /** @scenario */
+    /** @test */
     function changing_items_preserves_my_boolean_flag()
     {
         $numbers = new FlaggedNumbers(true, 1, 2, 3);

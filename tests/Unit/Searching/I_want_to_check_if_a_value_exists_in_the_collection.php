@@ -11,7 +11,7 @@ use Stratadox\ImmutableCollection\Test\Unit\Searching\Things\Thing;
 
 class I_want_to_check_if_a_value_exists_in_the_collection extends TestCase
 {
-    /** @scenario */
+    /** @test */
     function checking_if_a_value_exists()
     {
         $collection = new Numbers(1, 2, 25);
@@ -20,7 +20,7 @@ class I_want_to_check_if_a_value_exists_in_the_collection extends TestCase
         $this->assertFalse($collection->has(3));
     }
 
-    /** @scenario */
+    /** @test */
     function value_checking_uses_strict_typing()
     {
         $collection = new Numbers(1, 2, 25);
@@ -28,7 +28,7 @@ class I_want_to_check_if_a_value_exists_in_the_collection extends TestCase
         $this->assertFalse($collection->has('2'));
     }
 
-    /** @scenario */
+    /** @test */
     function checking_for_objects_goes_by_value_by_default()
     {
         $foo = Thing::named('Foo');
@@ -39,7 +39,7 @@ class I_want_to_check_if_a_value_exists_in_the_collection extends TestCase
         $this->assertFalse($collection->has(Thing::named('Bar')));
     }
 
-    /** @scenario */
+    /** @test */
     function checking_for_objects_goes_by_reference_if_desired()
     {
         $foo = Thing::named('Foo');

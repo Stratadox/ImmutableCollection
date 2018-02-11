@@ -15,7 +15,7 @@ use Stratadox\ImmutableCollection\Test\Unit\Reducing\Numbers\Numbers;
 
 class I_want_to_reduce_the_collection_to_a_single_value extends TestCase
 {
-    /** @scenario */
+    /** @test */
     function summing_the_numbers_in_the_collection()
     {
         $numbers = new Numbers(1, 2, 3, 4);
@@ -32,7 +32,7 @@ class I_want_to_reduce_the_collection_to_a_single_value extends TestCase
         );
     }
 
-    /** @scenario */
+    /** @test */
     function applying_a_collection_of_events()
     {
         $events = new Events(

@@ -15,7 +15,7 @@ use Stratadox\ImmutableCollection\Test\Unit\Filtering\Things\Thing;
 
 class I_want_to_filter_the_collection extends TestCase
 {
-    /** @scenario */
+    /** @test */
     function filtering_numbers_larger_than_2()
     {
         $numbers = new Numbers(1, 2, 3, 4, 5);
@@ -26,7 +26,7 @@ class I_want_to_filter_the_collection extends TestCase
         );
     }
 
-    /** @scenario */
+    /** @test */
     function filtering_numbers_preserves_my_boolean_flag()
     {
         $numbers = new FlaggedNumbers(true, 1, 2, 3, 4, 5);

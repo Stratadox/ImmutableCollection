@@ -9,7 +9,7 @@ use Stratadox\ImmutableCollection\Test\Unit\Collection\Stubs\SimpleCollection;
 
 class I_want_to_view_the_items_in_the_collection extends TestCase
 {
-    /** @scenario */
+    /** @test */
     function viewing_the_collection_through_array_syntax()
     {
         $collection = new SimpleCollection(10, 20, 30);
@@ -17,7 +17,7 @@ class I_want_to_view_the_items_in_the_collection extends TestCase
         $this->assertSame(20, $collection[1]);
     }
 
-    /** @scenario */
+    /** @test */
     function converting_the_collection_to_an_array()
     {
         $collection = new SimpleCollection(10, 20, 30);

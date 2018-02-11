@@ -10,7 +10,7 @@ use Stratadox\ImmutableCollection\Test\Unit\Collection\Stubs\SimpleCollection;
 
 class I_want_my_collection_to_be_immutable extends TestCase
 {
-    /** @scenario */
+    /** @test */
     function cannot_set_item_through_array_syntax()
     {
         $collection = new SimpleCollection(1, 2, 3);
@@ -20,7 +20,7 @@ class I_want_my_collection_to_be_immutable extends TestCase
         $collection[0] = 4;
     }
 
-    /** @scenario */
+    /** @test */
     function cannot_add_item_through_array_syntax()
     {
         $collection = new SimpleCollection(1, 2, 3);
@@ -30,7 +30,7 @@ class I_want_my_collection_to_be_immutable extends TestCase
         $collection[] = 4;
     }
 
-    /** @scenario */
+    /** @test */
     function cannot_unset_directly()
     {
         $collection = new SimpleCollection(1, 2, 3, 4);
@@ -40,7 +40,7 @@ class I_want_my_collection_to_be_immutable extends TestCase
         unset($collection[2]);
     }
 
-    /** @scenario */
+    /** @test */
     function cannot_remove_values_by_shortening_the_array()
     {
         $collection = new SimpleCollection(1, 2, 3, 4);
