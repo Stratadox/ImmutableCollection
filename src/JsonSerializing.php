@@ -4,11 +4,21 @@ declare(strict_types=1);
 
 namespace Stratadox\ImmutableCollection;
 
+use function json_encode;
 use Stratadox\Collection\Collection;
 use Stratadox\Collection\ConversionFailed;
 use Stratadox\Collection\JsonSerializable;
 use Throwable;
 
+/**
+ * Behaviour to serialize the collection to json.
+ *
+ * Provides access to serialisation behaviour in the form of a method that
+ * serializes the collection to a json-encoded string.
+ *
+ * @package Stratadox\Collection
+ * @author Stratadox
+ */
 trait JsonSerializing
 {
     /**

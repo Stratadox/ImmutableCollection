@@ -8,6 +8,15 @@ use function array_pad;
 use Stratadox\Collection\Collection;
 use Stratadox\Collection\Paddable;
 
+/**
+ * Behaviour to pad the collection to match a certain size.
+ *
+ * Provides access to padding behaviour in the form of two methods that pad the
+ * collection on either the left or the right side.
+ *
+ * @package Stratadox\Collection
+ * @author Stratadox
+ */
 trait Padding
 {
     /**

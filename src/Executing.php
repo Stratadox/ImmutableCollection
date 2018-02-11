@@ -7,6 +7,15 @@ namespace Stratadox\ImmutableCollection;
 use Closure;
 use Stratadox\Collection\Executable;
 
+/**
+ * Behaviour to execute a closure on each item in the collection.
+ *
+ * Provides access to execution behaviour in the form of a method that
+ * executes an anonymous function on each item in the collection.
+ *
+ * @package Stratadox\Collection
+ * @author Stratadox
+ */
 trait Executing
 {
     /**
