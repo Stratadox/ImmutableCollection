@@ -16,7 +16,11 @@ trait Executing
     public function execute(Closure $function) : void
     {
         foreach ($this as $position => $item) {
-            $function->call($item, $position, $item);
+            if (is_object($item)) {
+                $function->call($item, $position, $item);
+            } else {
+                $function($position, $item);
+            }
         }
     }
 }
