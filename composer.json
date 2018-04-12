@@ -19,7 +19,7 @@
   },
   "require": {
     "php": ">=7.1",
-    "stratadox/collection-contracts": "^1.0",
+    "stratadox/collection-contracts": "^2.0",
     "stratadox/specification-interfaces": "^1.0"
   },
   "require-dev": {
