@@ -16,7 +16,7 @@ use Stratadox\Specification\Contract\Satisfiable;
  * returns a modified copy of the original (immutable) collection.
  *
  * @package Stratadox\Collection
- * @author Stratadox
+ * @author  Stratadox
  */
 trait Filtering
 {
@@ -25,7 +25,7 @@ trait Filtering
      * @param Satisfiable $condition
      * @return Filterable|static
      */
-    public function that(Satisfiable $condition) : Filterable
+    public function that(Satisfiable $condition): Filterable
     {
         return $this->newCopy(array_filter(
             $this->items(), [$condition, 'isSatisfiedBy']
@@ -33,12 +33,12 @@ trait Filtering
     }
 
     /** @see Collection::items() */
-    abstract public function items() : array;
+    abstract public function items(): array;
 
     /**
      * @see ImmutableCollection::newCopy()
      * @param array $items
      * @return Collection|static
      */
-    abstract protected function newCopy(array $items) : Collection;
+    abstract protected function newCopy(array $items): Collection;
 }

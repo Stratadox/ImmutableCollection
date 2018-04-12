@@ -15,7 +15,7 @@ use Stratadox\Collection\Collection;
  * returns a modified copy of the original (immutable) collection.
  *
  * @package Stratadox\Collection
- * @author Stratadox
+ * @author  Stratadox
  */
 trait Appending
 {
@@ -24,18 +24,18 @@ trait Appending
      * @param array ...$newItems
      * @return Appendable|static
      */
-    public function add(...$newItems) : Appendable
+    public function add(...$newItems): Appendable
     {
         return $this->newCopy(array_merge($this->items(), $newItems));
     }
 
     /** @see Collection::items() */
-    abstract public function items() : array;
+    abstract public function items(): array;
 
     /**
      * @see ImmutableCollection::newCopy()
      * @param array $items
      * @return Collection|static
      */
-    abstract protected function newCopy(array $items) : Collection;
+    abstract protected function newCopy(array $items): Collection;
 }

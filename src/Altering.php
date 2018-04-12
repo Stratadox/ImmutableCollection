@@ -14,7 +14,7 @@ use Stratadox\Collection\Collection;
  * return a modified copy of the original (immutable) collection.
  *
  * @package Stratadox\Collection
- * @author Stratadox
+ * @author  Stratadox
  */
 trait Altering
 {
@@ -24,7 +24,7 @@ trait Altering
      * @param mixed $newItem
      * @return Alterable|static
      */
-    public function change(int $index, $newItem) : Alterable
+    public function change(int $index, $newItem): Alterable
     {
         $items = $this->items();
         $items[$index] = $newItem;
@@ -32,12 +32,12 @@ trait Altering
     }
 
     /** @see Collection::items() */
-    abstract public function items() : array;
+    abstract public function items(): array;
 
     /**
      * @see ImmutableCollection::newCopy()
      * @param array $items
      * @return Collection|static
      */
-    abstract protected function newCopy(array $items) : Collection;
+    abstract protected function newCopy(array $items): Collection;
 }

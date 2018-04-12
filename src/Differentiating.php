@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Stratadox\ImmutableCollection;
 
+use function in_array;
 use Stratadox\Collection\Collection;
 use Stratadox\Collection\Differentiable;
 
@@ -15,22 +16,22 @@ use Stratadox\Collection\Differentiable;
  * values omitted that also appear in one of the other collections.
  *
  * @package Stratadox\Collection
- * @author Stratadox
+ * @author  Stratadox
  */
 trait Differentiating
 {
     /**
+     * @see Differentiable::differenceBetween()
      * @param Collection[] ...$others
      * @return Differentiable|static
      */
-    public function differenceBetween(Collection ...$others) : Differentiable
+    public function differenceBetween(Collection ...$others): Differentiable
     {
         return $this->newCopy(array_filter(
             $this->items(),
-            function ($item) use ($others) : bool
-            {
+            function ($item) use ($others) : bool {
                 foreach ($others as $otherCollection) {
-                    if (in_array($item, $otherCollection->items())) {
+                    if (in_array($item, $otherCollection->items(), false)) {
                         return false;
                     }
                 }
@@ -40,12 +41,12 @@ trait Differentiating
     }
 
     /** @see Collection::items() */
-    abstract public function items() : array;
+    abstract public function items(): array;
 
     /**
      * @see ImmutableCollection::newCopy()
      * @param array $items
      * @return Collection|static
      */
-    abstract protected function newCopy(array $items) : Collection;
+    abstract protected function newCopy(array $items): Collection;
 }

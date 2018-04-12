@@ -16,7 +16,7 @@ use Stratadox\Collection\Mappable;
  * collection according to an anonymous function.
  *
  * @package Stratadox\Collection
- * @author Stratadox
+ * @author  Stratadox
  */
 trait Mapping
 {
@@ -25,18 +25,18 @@ trait Mapping
      * @param Closure $function
      * @return Mappable|static
      */
-    public function map(Closure $function) : Mappable
+    public function map(Closure $function): Mappable
     {
         return $this->newCopy(array_map($function, $this->items()));
     }
 
     /** @see Collection::items() */
-    abstract public function items() : array;
+    abstract public function items(): array;
 
     /**
      * @see ImmutableCollection::newCopy()
      * @param array $items
      * @return Collection|static
      */
-    abstract protected function newCopy(array $items) : Collection;
+    abstract protected function newCopy(array $items): Collection;
 }

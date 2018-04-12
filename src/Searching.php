@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Stratadox\ImmutableCollection;
 
 use function array_search;
+use function in_array;
+use function is_object;
 use Stratadox\Collection\Collection;
 use Stratadox\Collection\NotFound;
 
@@ -16,7 +18,7 @@ use Stratadox\Collection\NotFound;
  * original collection.
  *
  * @package Stratadox\Collection
- * @author Stratadox
+ * @author  Stratadox
  */
 trait Searching
 {
@@ -25,7 +27,7 @@ trait Searching
      * @param mixed $item
      * @return bool
      */
-    public function has($item) : bool
+    public function has($item): bool
     {
         return $this->positionOf($item) !== false;
     }
@@ -35,17 +37,18 @@ trait Searching
      * @param object $object
      * @return bool
      */
-    public function hasThe($object) : bool
+    public function hasThe($object): bool
     {
-        return array_search($object, $this->items(), true) !== false;
+        return in_array($object, $this->items(), true);
     }
 
     /**
      * @see Searchable::find()
      * @param mixed $item
      * @return int
+     * @throws NotFound
      */
-    public function find($item) : int
+    public function find($item): int
     {
         $position = $this->positionOf($item);
         $this->mustBeValid($position, $item);
@@ -56,8 +59,9 @@ trait Searching
      * @see Searchable::findThe()
      * @param object $object
      * @return int
+     * @throws NotFound
      */
-    public function findThe($object) : int
+    public function findThe($object): int
     {
         $position = array_search($object, $this->items(), true);
         $this->mustBeValid($position, $object);
@@ -71,7 +75,7 @@ trait Searching
     private function positionOf($item)
     {
         if (is_object($item)) {
-            return array_search($item, $this->items());
+            return array_search($item, $this->items(), false);
         }
         return array_search($item, $this->items(), true);
     }
@@ -81,7 +85,7 @@ trait Searching
      * @param mixed    $whatWeAreLookingFor The item we're looking for.
      * @throws NotFound                     When the position is false.
      */
-    private function mustBeValid($position, $whatWeAreLookingFor) : void
+    private function mustBeValid($position, $whatWeAreLookingFor): void
     {
         if ($position === false) {
             /** @var Collection $this */
@@ -90,5 +94,5 @@ trait Searching
     }
 
     /** @see Collection::items() */
-    abstract public function items() : array;
+    abstract public function items(): array;
 }

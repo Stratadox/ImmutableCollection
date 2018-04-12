@@ -15,7 +15,7 @@ use Stratadox\Collection\Mergeable;
  * returns a modified copy of the original (immutable) collection.
  *
  * @package Stratadox\Collection
- * @author Stratadox
+ * @author  Stratadox
  */
 trait Merging
 {
@@ -24,18 +24,18 @@ trait Merging
      * @param Collection $other
      * @return Mergeable|static
      */
-    public function merge(Collection $other) : Mergeable
+    public function merge(Collection $other): Mergeable
     {
         return $this->newCopy(array_merge($this->items(), $other->items()));
     }
 
     /** @see Collection::items() */
-    abstract public function items() : array;
+    abstract public function items(): array;
 
     /**
      * @see ImmutableCollection::newCopy()
      * @param array $items
      * @return Collection|static
      */
-    abstract protected function newCopy(array $items) : Collection;
+    abstract protected function newCopy(array $items): Collection;
 }

@@ -19,7 +19,7 @@ use function var_export;
  * When looking for an object by reference, use @see Searchable::hasThe() instead.
  *
  * @package Stratadox\Collection
- * @author Stratadox
+ * @author  Stratadox
  */
 class NoSuchValue extends UnexpectedValueException implements NotFound
 {
@@ -28,7 +28,7 @@ class NoSuchValue extends UnexpectedValueException implements NotFound
      * @param mixed      $theValue   The value that was not found.
      * @return NotFound              The exception object to throw.
      */
-    public static function couldNotFind(Collection $collection, $theValue) : NotFound
+    public static function couldNotFind(Collection $collection, $theValue): NotFound
     {
         return new static(sprintf(
             'Could not find %s in %s',

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Stratadox\ImmutableCollection;
 
 use Closure;
+use function is_object;
 use Stratadox\Collection\Executable;
 
 /**
@@ -14,7 +15,7 @@ use Stratadox\Collection\Executable;
  * executes an anonymous function on each item in the collection.
  *
  * @package Stratadox\Collection
- * @author Stratadox
+ * @author  Stratadox
  */
 trait Executing
 {
@@ -22,7 +23,7 @@ trait Executing
      * @see Executable::execute()
      * @param Closure $function
      */
-    public function execute(Closure $function) : void
+    public function execute(Closure $function): void
     {
         foreach ($this as $position => $item) {
             if (is_object($item)) {

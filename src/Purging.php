@@ -14,7 +14,7 @@ use Stratadox\Collection\Purgeable;
  * return a modified copy of the original (immutable) collection.
  *
  * @package Stratadox\Collection
- * @author Stratadox
+ * @author  Stratadox
  */
 trait Purging
 {
@@ -23,7 +23,7 @@ trait Purging
      * @param int $index
      * @return Purgeable|static
      */
-    public function delete(int $index) : Purgeable
+    public function delete(int $index): Purgeable
     {
         $items = $this->items();
         unset($items[$index]);
@@ -35,7 +35,7 @@ trait Purging
      * @param mixed ...$itemsToRemove
      * @return Purgeable|static
      */
-    public function remove(...$itemsToRemove) : Purgeable
+    public function remove(...$itemsToRemove): Purgeable
     {
         return $this->newCopy(array_filter(
             $this->items(),
@@ -46,12 +46,12 @@ trait Purging
     }
 
     /** @see Collection::items() */
-    abstract public function items() : array;
+    abstract public function items(): array;
 
     /**
      * @see ImmutableCollection::newCopy()
      * @param array $items
      * @return Collection|static
      */
-    abstract protected function newCopy(array $items) : Collection;
+    abstract protected function newCopy(array $items): Collection;
 }

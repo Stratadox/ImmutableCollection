@@ -17,7 +17,7 @@ use Throwable;
  * serializes the collection to a json-encoded string.
  *
  * @package Stratadox\Collection
- * @author Stratadox
+ * @author  Stratadox
  */
 trait JsonSerializing
 {
@@ -26,7 +26,7 @@ trait JsonSerializing
      * @return string
      * @throws ConversionFailed
      */
-    public function json() : string
+    public function json(): string
     {
         try {
             return json_encode($this->items());
@@ -37,5 +37,5 @@ trait JsonSerializing
     }
 
     /** @see Collection::items() */
-    abstract public function items() : array;
+    abstract public function items(): array;
 }

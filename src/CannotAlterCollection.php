@@ -29,7 +29,7 @@ use Stratadox\Collection\NotAllowed;
  * prevent such mutating behaviour.
  *
  * @package Stratadox\Collection
- * @author Stratadox
+ * @author  Stratadox
  */
 class CannotAlterCollection extends BadMethodCallException implements NotAllowed
 {
@@ -39,7 +39,7 @@ class CannotAlterCollection extends BadMethodCallException implements NotAllowed
      * @param Collection $collection The collection that may not be mutated.
      * @return NotAllowed            The exception object.
      */
-    public static function byAddingTo(Collection $collection) : NotAllowed
+    public static function byAddingTo(Collection $collection): NotAllowed
     {
         return new static(sprintf(
             'Cannot add to the immutable collection `%s`. ',
@@ -54,10 +54,10 @@ class CannotAlterCollection extends BadMethodCallException implements NotAllowed
      * @param int        $index      The index that will not be overwritten.
      * @return NotAllowed            The exception object.
      */
-    public static function byOverWriting(Collection $collection, int $index) : NotAllowed
+    public static function byOverWriting(Collection $collection, int $index): NotAllowed
     {
         return new static(sprintf(
-            'Cannot write to the immutable collection `%s`. '.
+            'Cannot write to the immutable collection `%s`. ' .
             '(Tried writing to position %d).',
             get_class($collection),
             $index
@@ -71,10 +71,10 @@ class CannotAlterCollection extends BadMethodCallException implements NotAllowed
      * @param int        $index      The index that will not be removed.
      * @return NotAllowed            The exception object.
      */
-    public static function byRemoving(Collection $collection, int $index) : NotAllowed
+    public static function byRemoving(Collection $collection, int $index): NotAllowed
     {
         return new static(sprintf(
-            'Cannot alter the immutable collection `%s`. '.
+            'Cannot alter the immutable collection `%s`. ' .
             '(Tried to unset position %d).',
             get_class($collection),
             $index
@@ -88,10 +88,10 @@ class CannotAlterCollection extends BadMethodCallException implements NotAllowed
      * @param int        $size       The size that will not be assigned.
      * @return NotAllowed            The exception object.
      */
-    public static function byResizingTo(Collection $collection, int $size) : NotAllowed
+    public static function byResizingTo(Collection $collection, int $size): NotAllowed
     {
         return new static(sprintf(
-            'Cannot directly resize the immutable collection `%s`. '.
+            'Cannot directly resize the immutable collection `%s`. ' .
             '(Tried to resize from %d to %d).',
             get_class($collection),
             count($collection),

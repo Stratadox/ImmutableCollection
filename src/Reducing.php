@@ -14,7 +14,7 @@ use Closure;
  * returns a reduced value based on the original collection.
  *
  * @package Stratadox\Collection
- * @author Stratadox
+ * @author  Stratadox
  */
 trait Reducing
 {
@@ -30,5 +30,5 @@ trait Reducing
     }
 
     /** @see Collection::items() */
-    abstract public function items() : array;
+    abstract public function items(): array;
 }

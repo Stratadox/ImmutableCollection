@@ -15,39 +15,39 @@ use Stratadox\Collection\Paddable;
  * collection on either the left or the right side.
  *
  * @package Stratadox\Collection
- * @author Stratadox
+ * @author  Stratadox
  */
 trait Padding
 {
     /**
      * @see Paddable::padRight()
-     * @param int $amount
+     * @param int   $amount
      * @param mixed $value
      * @return Paddable|static
      */
-    public function padRight(int $amount, $value) : Paddable
+    public function padRight(int $amount, $value): Paddable
     {
         return $this->newCopy(array_pad($this->items(), $amount, $value));
     }
 
     /**
      * @see Paddable::padLeft()
-     * @param int $amount
+     * @param int   $amount
      * @param mixed $value
      * @return Paddable|static
      */
-    public function padLeft(int $amount, $value) : Paddable
+    public function padLeft(int $amount, $value): Paddable
     {
         return $this->newCopy(array_pad($this->items(), -$amount, $value));
     }
 
     /** @see Collection::items() */
-    abstract public function items() : array;
+    abstract public function items(): array;
 
     /**
      * @see ImmutableCollection::newCopy()
      * @param array $items
      * @return Collection|static
      */
-    abstract protected function newCopy(array $items) : Collection;
+    abstract protected function newCopy(array $items): Collection;
 }

@@ -20,7 +20,7 @@ use Stratadox\Collection\NotAllowed;
  * This way, neither an inheritance nor reflection can mutate the data.
  *
  * @package Stratadox\Collection
- * @author Stratadox
+ * @author  Stratadox
  */
 abstract class ImmutableCollection extends SplFixedArray implements Collection
 {
@@ -45,7 +45,7 @@ abstract class ImmutableCollection extends SplFixedArray implements Collection
      * @param bool|null $save_indexes Ignored parameter.
      * @return self|static
      */
-    final public static function fromArray($array, $save_indexes = null) : self
+    final public static function fromArray($array, $save_indexes = null): self
     {
         return new static(...$array);
     }
@@ -57,7 +57,7 @@ abstract class ImmutableCollection extends SplFixedArray implements Collection
      * @param mixed     $value The value that will not be written.
      * @throws NotAllowed      Whenever called upon.
      */
-    final public function offsetSet($index, $value)
+    final public function offsetSet($index, $value): void
     {
         if (is_null($index)) {
             throw CannotAlterCollection::byAddingTo($this);
@@ -71,7 +71,7 @@ abstract class ImmutableCollection extends SplFixedArray implements Collection
      * @param int|mixed $index The index that may not be unset.
      * @throws NotAllowed      Whenever called upon.
      */
-    final public function offsetUnset($index)
+    final public function offsetUnset($index): void
     {
         throw CannotAlterCollection::byRemoving($this, $index);
     }
@@ -80,10 +80,10 @@ abstract class ImmutableCollection extends SplFixedArray implements Collection
      * Disallows use of the setSize method.
      *
      * @param int $size   The new size that will not be assigned.
-     * @return int        In case false === true.
+     * @return bool       In case false === true.
      * @throws NotAllowed Whenever called upon.
      */
-    final public function setSize($size)
+    final public function setSize($size): bool
     {
         throw CannotAlterCollection::byResizingTo($this, $size);
     }
@@ -93,7 +93,7 @@ abstract class ImmutableCollection extends SplFixedArray implements Collection
      *
      * @return array An array representation of the items in the collection.
      */
-    public function items() : array
+    public function items(): array
     {
         return $this->toArray();
     }
@@ -104,7 +104,7 @@ abstract class ImmutableCollection extends SplFixedArray implements Collection
      * @param array $items       The items to include in the new copy.
      * @return Collection|static The altered copy.
      */
-    protected function newCopy(array $items) : Collection
+    protected function newCopy(array $items): Collection
     {
         return new static(...$items);
     }

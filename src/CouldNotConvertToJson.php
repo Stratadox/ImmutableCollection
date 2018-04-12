@@ -16,8 +16,7 @@ final class CouldNotConvertToJson extends RuntimeException implements Conversion
     public static function encountered(
         Collection $theCollection,
         Throwable $exception
-    ) : ConversionFailed
-    {
+    ): ConversionFailed {
         return new CouldNotConvertToJson(withMessage(
             'Could not convert the `%s` class to json: %s',
             theClassOf($theCollection),
