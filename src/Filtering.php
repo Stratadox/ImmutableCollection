@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Stratadox\ImmutableCollection;
 
 use function array_filter;
+use Closure;
 use Stratadox\Collection\Collection;
 use Stratadox\Collection\Filterable;
 use Stratadox\Specification\Contract\Satisfiable;
@@ -29,6 +30,18 @@ trait Filtering
     {
         return $this->newCopy(array_filter(
             $this->items(), [$condition, 'isSatisfiedBy']
+        ));
+    }
+
+    /**
+     * @see Filterable::filterWith
+     * @param Closure $function
+     * @return Filterable|static
+     */
+    public function filterWith(Closure $function): Filterable
+    {
+        return $this->newCopy(array_filter(
+            $this->items(), $function
         ));
     }
 
