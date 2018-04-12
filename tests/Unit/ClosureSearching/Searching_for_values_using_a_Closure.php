@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Stratadox\ImmutableCollection\Test\Unit\ClosureSearching;
 
 use PHPUnit\Framework\TestCase;
+use Stratadox\Collection\NotFound;
 use Stratadox\ImmutableCollection\Test\Unit\ClosureSearching\Things\Thing;
 use Stratadox\ImmutableCollection\Test\Unit\ClosureSearching\Things\Things;
 use function strpos;
@@ -36,6 +37,19 @@ class Searching_for_values_using_a_Closure extends TestCase
                 return strpos($toCheck->name(), 'Ba') === 0;
             })
         );
+    }
+
+    /** @test */
+    function throwing_an_exception_if_none_of_the_items_qualify()
+    {
+        $this->expectException(NotFound::class);
+        $this->expectExceptionMessage(
+            'Could not find any accepted item in the ' . Things::class
+        );
+
+        $this->things->findOneWith(function (): bool {
+            return false;
+        });
     }
 
     /** @test */
