@@ -5,6 +5,7 @@ namespace Stratadox\ImmutableCollection;
 
 use Closure;
 use Stratadox\Collection\ClosureSearchable;
+use Stratadox\Collection\Collection;
 use Stratadox\Collection\NotFound;
 
 trait ClosureSearching
@@ -22,6 +23,8 @@ trait ClosureSearching
                 return $item;
             }
         }
+        /** @var Collection $this */
+        throw NoSuchValue::noneOfTheValuesMatched($this);
     }
 
     /**

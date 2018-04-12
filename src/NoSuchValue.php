@@ -36,4 +36,12 @@ class NoSuchValue extends UnexpectedValueException implements NotFound
             get_class($collection)
         ));
     }
+
+    public static function noneOfTheValuesMatched(Collection $collection): self
+    {
+        return new self(sprintf(
+            'Could not find any accepted item in the %s.',
+            get_class($collection)
+        ));
+    }
 }
