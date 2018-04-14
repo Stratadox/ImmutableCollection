@@ -21,7 +21,7 @@ use function var_export;
  * @package Stratadox\Collection
  * @author  Stratadox
  */
-class NoSuchValue extends UnexpectedValueException implements NotFound
+final class NoSuchValue extends UnexpectedValueException implements NotFound
 {
     /**
      * @param Collection $collection The collection that does not have the item.

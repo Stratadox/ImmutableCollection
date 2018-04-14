@@ -31,7 +31,7 @@ use Stratadox\Collection\NotAllowed;
  * @package Stratadox\Collection
  * @author  Stratadox
  */
-class CannotAlterCollection extends BadMethodCallException implements NotAllowed
+final class CannotAlterCollection extends BadMethodCallException implements NotAllowed
 {
     /**
      * Indicates that this append operation is not allowed.
