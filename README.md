@@ -12,9 +12,24 @@ the SplFixedArray class, as well as several traits with behavioural logic for
 
 ## Why use this
 
-Since the SplFixedArray class is considerably faster and more memory-efficient
-than regular php "arrays", using an ImmutableCollection means a gain in speed
-and memory compared to an array.
+Regular php "arrays" are not really arrays at all, but sorted hash maps.
+They are not objects, they are not thread safe and they cannot guard their own 
+invariants.
+
+Although sorted hash maps are a versatile data structure that can be used in 
+many different scenarios, they aren't always *good* data structures for the
+situation.
+
+When dealing with a collection of objects, for instance, you probably want
+dedicated collection objects, on which you can call methods.
+
+Many frameworks provide some sort of collection class.
+They rarely provide immutability, though, and are usually implementing a bloated 
+interface with all of the methods you might some day need.
+
+Due to the many optional expansions which can be applied at will, this package
+enables powerful typesafe collections that can be fine-tunes for use in any
+project, without getting distracted by a bloated collection interface.
 
 The immutability of the collection means they can be used in projects that care
 about reducing state changes.
@@ -66,7 +81,7 @@ $numbers = $numbers->add(4);
 assert($numbers == new Numbers(1, 2, 3, 4));
 ```
 
-Similarly, multiple kinds of behaviour can be used simultaneously:
+Multiple kinds of behaviour can be used simultaneously:
 
 ```php
 <?php
@@ -84,6 +99,18 @@ class Numbers extends ImmutableCollection implements Mergeable, Purgeable
 $numbers = new Numbers(1, 2, 3);
 $numbers = $numbers->merge(new Numbers(4, 5, 6));
 $numbers = $numbers->remove(3);
+
+assert($numbers == new Numbers(1, 2, 4, 5, 6));
+```
+
+The shorthand for which is:
+
+```php
+<?php
+
+$numbers = (new Numbers(1, 2, 3))
+    ->merge(new Numbers(4, 5, 6))
+    ->remove(3);
 
 assert($numbers == new Numbers(1, 2, 4, 5, 6));
 ```
