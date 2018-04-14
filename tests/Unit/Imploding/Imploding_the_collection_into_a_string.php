@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Stratadox\ImmutableCollection\Test\Unit\JsonSerializing;
+namespace Stratadox\ImmutableCollection\Test\Unit\Imploding;
 
 use PHPUnit\Framework\TestCase;
 use Stratadox\Collection\ConversionFailed;
