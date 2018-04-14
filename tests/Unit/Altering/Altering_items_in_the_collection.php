@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Stratadox\ImmutableCollection\Test;
+namespace Stratadox\ImmutableCollection\Test\Unit\Altering;
 
 use PHPUnit\Framework\TestCase;
 use Stratadox\ImmutableCollection\Test\Unit\Altering\Numbers\Numbers;

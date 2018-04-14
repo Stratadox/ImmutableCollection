@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Stratadox\ImmutableCollection\Test;
+namespace Stratadox\ImmutableCollection\Test\Unit\Collection;
 
 use PHPUnit\Framework\TestCase;
 use Stratadox\ImmutableCollection\Test\Unit\Collection\Stubs\Numbers;

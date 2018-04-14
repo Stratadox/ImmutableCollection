@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Stratadox\ImmutableCollection\Test;
+namespace Stratadox\ImmutableCollection\Test\Unit\Filtering;
 
 use PHPUnit\Framework\TestCase;
 use Stratadox\Collection\Collection;
