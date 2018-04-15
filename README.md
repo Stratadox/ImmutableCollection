@@ -24,8 +24,9 @@ When dealing with a collection of objects, for instance, you probably want
 dedicated collection objects, on which you can call methods.
 
 Many frameworks provide some sort of collection class.
-They rarely provide immutability, though, and are usually implementing a bloated 
-interface with all of the methods you might some day need.
+They rarely provide immutability, though, and are therefore not thread safe.
+Additionally, they are usually implementing a bloated interface with all of the 
+methods you might some day need - but probably won't.
 
 Due to the many optional expansions which can be applied at will, this package
 enables powerful typesafe collections that can be fine-tunes for use in any
@@ -58,6 +59,22 @@ class Numbers extends ImmutableCollection
     }
 }
 ```
+
+Or:
+
+```php
+<?php
+
+class Things extends ImmutableCollection
+{
+    public function __construct(Thing ...$things)
+    {
+        parent::__construct(...$things);
+    }
+}
+```
+
+## Advanced usage
 
 Additional behaviour can be added by implementing the relevant interfaces and/or 
 traits for the particular concrete collection:
@@ -115,3 +132,28 @@ $numbers = (new Numbers(1, 2, 3))
 assert($numbers == new Numbers(1, 2, 4, 5, 6));
 ```
 
+If desired, the methods `current` and `offsetGet` may be implemented with a 
+return type hint, in order to (further) increase type safety and to allow
+IDE's like PhpStorm to provide code completion in loops and array-like access:
+
+```php
+<?php
+
+class Things extends ImmutableCollection
+{
+    public function __construct(Thing ...$things)
+    {
+        parent::__construct(...$things);
+    }
+
+    public function current(): Thing
+    {
+        return parent::current();
+    }
+
+    public function offsetGet($index): Thing
+    {
+        return parent::offsetGet($index);
+    }
+}
+```
