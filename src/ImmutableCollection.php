@@ -102,7 +102,7 @@ abstract class ImmutableCollection extends SplFixedArray implements Collection
      * Produces a new copy of this collection, using a new set of values.
      *
      * @param array $items       The items to include in the new copy.
-     * @return Collection|static The altered copy.
+     * @return static The altered copy.
      */
     protected function newCopy(array $items): Collection
     {

@@ -22,9 +22,9 @@ trait Merging
     /**
      * @see Mergeable::merge()
      * @param Collection $other
-     * @return Mergeable|static
+     * @return static
      */
-    public function merge(Collection $other): Mergeable
+    public function merge(Collection $other)
     {
         return $this->newCopy(array_merge($this->items(), $other->items()));
     }

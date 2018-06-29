@@ -23,9 +23,9 @@ trait Padding
      * @see Paddable::padRight()
      * @param int   $amount
      * @param mixed $value
-     * @return Paddable|static
+     * @return static
      */
-    public function padRight(int $amount, $value): Paddable
+    public function padRight(int $amount, $value)
     {
         return $this->newCopy(array_pad($this->items(), $amount, $value));
     }
@@ -34,9 +34,9 @@ trait Padding
      * @see Paddable::padLeft()
      * @param int   $amount
      * @param mixed $value
-     * @return Paddable|static
+     * @return static
      */
-    public function padLeft(int $amount, $value): Paddable
+    public function padLeft(int $amount, $value)
     {
         return $this->newCopy(array_pad($this->items(), -$amount, $value));
     }

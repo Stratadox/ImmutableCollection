@@ -21,9 +21,9 @@ trait Purging
     /**
      * @see Purgeable::delete()
      * @param int $index
-     * @return Purgeable|static
+     * @return static
      */
-    public function delete(int $index): Purgeable
+    public function delete(int $index)
     {
         $items = $this->items();
         unset($items[$index]);
@@ -33,9 +33,9 @@ trait Purging
     /**
      * @see Purgeable::remove()
      * @param mixed ...$itemsToRemove
-     * @return Purgeable|static
+     * @return static
      */
-    public function remove(...$itemsToRemove): Purgeable
+    public function remove(...$itemsToRemove)
     {
         return $this->newCopy(array_filter(
             $this->items(),

@@ -22,9 +22,9 @@ trait Altering
      * @see Alterable::change()
      * @param int   $index
      * @param mixed $newItem
-     * @return Alterable|static
+     * @return static
      */
-    public function change(int $index, $newItem): Alterable
+    public function change(int $index, $newItem)
     {
         $items = $this->items();
         $items[$index] = $newItem;
@@ -37,7 +37,7 @@ trait Altering
     /**
      * @see ImmutableCollection::newCopy()
      * @param array $items
-     * @return Collection|static
+     * @return static
      */
     abstract protected function newCopy(array $items): Collection;
 }

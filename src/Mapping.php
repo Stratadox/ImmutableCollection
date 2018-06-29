@@ -23,9 +23,9 @@ trait Mapping
     /**
      * @see Mappable::map()
      * @param Closure $function
-     * @return Mappable|static
+     * @return static
      */
-    public function map(Closure $function): Mappable
+    public function map(Closure $function)
     {
         return $this->newCopy(array_map($function, $this->items()));
     }

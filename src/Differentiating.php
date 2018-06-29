@@ -23,9 +23,9 @@ trait Differentiating
     /**
      * @see Differentiable::differenceBetween()
      * @param Collection[] ...$others
-     * @return Differentiable|static
+     * @return static
      */
-    public function differenceBetween(Collection ...$others): Differentiable
+    public function differenceBetween(Collection ...$others)
     {
         return $this->newCopy(array_filter(
             $this->items(),
@@ -46,7 +46,7 @@ trait Differentiating
     /**
      * @see ImmutableCollection::newCopy()
      * @param array $items
-     * @return Collection|static
+     * @return static
      */
     abstract protected function newCopy(array $items): Collection;
 }

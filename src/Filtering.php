@@ -24,9 +24,9 @@ trait Filtering
     /**
      * @see Filterable::that
      * @param Satisfiable $condition
-     * @return Filterable|static
+     * @return static
      */
-    public function that(Satisfiable $condition): Filterable
+    public function that(Satisfiable $condition)
     {
         return $this->newCopy(array_filter(
             $this->items(), [$condition, 'isSatisfiedBy']
@@ -36,9 +36,9 @@ trait Filtering
     /**
      * @see Filterable::filterWith
      * @param Closure $function
-     * @return Filterable|static
+     * @return static
      */
-    public function filterWith(Closure $function): Filterable
+    public function filterWith(Closure $function)
     {
         return $this->newCopy(array_filter(
             $this->items(), $function
@@ -51,7 +51,7 @@ trait Filtering
     /**
      * @see ImmutableCollection::newCopy()
      * @param array $items
-     * @return Collection|static
+     * @return static
      */
     abstract protected function newCopy(array $items): Collection;
 }

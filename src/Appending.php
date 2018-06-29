@@ -22,9 +22,9 @@ trait Appending
     /**
      * @see Appendable::add()
      * @param array ...$newItems
-     * @return Appendable|static
+     * @return static
      */
-    public function add(...$newItems): Appendable
+    public function add(...$newItems)
     {
         return $this->newCopy(array_merge($this->items(), $newItems));
     }
@@ -35,7 +35,7 @@ trait Appending
     /**
      * @see ImmutableCollection::newCopy()
      * @param array $items
-     * @return Collection|static
+     * @return static
      */
     abstract protected function newCopy(array $items): Collection;
 }
