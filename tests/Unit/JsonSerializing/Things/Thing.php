@@ -25,7 +25,7 @@ class Thing implements JsonSerializable
         return $this->name;
     }
 
-    function jsonSerialize()
+    function jsonSerialize(): array
     {
         return ['name' => $this->name];
     }

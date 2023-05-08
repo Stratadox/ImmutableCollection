@@ -25,9 +25,9 @@ trait Mapping
      * @param Closure $function
      * @return static
      */
-    public function map(Closure $function)
+    public function map(Closure $function): array
     {
-        return $this->newCopy(array_map($function, $this->items()));
+        return array_map($function, $this->items());
     }
 
     /** @see Collection::items() */

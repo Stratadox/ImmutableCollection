@@ -8,7 +8,7 @@ use Exception;
 
 class NonSerializableThing extends Thing
 {
-    function jsonSerialize()
+    function jsonSerialize(): array
     {
         throw new Exception('Exception message here.');
     }

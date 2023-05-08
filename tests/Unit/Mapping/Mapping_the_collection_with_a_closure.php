@@ -27,10 +27,10 @@ class Mapping_the_collection_with_a_closure extends TestCase
         });
 
         $this->assertEquals(
-            new Things(
+            [
                 Thing::named('The Foo'),
                 Thing::named('The Bar')
-            ),
+            ],
             $mapped
         );
     }

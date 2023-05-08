@@ -24,11 +24,11 @@ class ImmutableCollection_can_use_isset extends TestCase
     }
 
     /** @test */
-    function null_values_are_considered_filled()
+    function null_values_are_considered_unset()
     {
         $collection = new SimpleCollection(null, 1, 2);
 
-        $this->assertTrue(isset($collection[0]));
+        $this->assertFalse(isset($collection[0]));
         $this->assertTrue(isset($collection[1]));
         $this->assertTrue(isset($collection[2]));
         $this->assertFalse(isset($collection[3]));

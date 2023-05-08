@@ -26,8 +26,6 @@ abstract class ImmutableCollection extends SplFixedArray implements Collection
 {
     /**
      * Make a new immutable collection.
-     *
-     * @param array ...$ofTheItems The items to use.
      */
     public function __construct(...$ofTheItems)
     {
